@@ -1,0 +1,265 @@
+@startuml
+
+title __CS665's Class Diagram__\n
+
+  namespace edu.bu.met.cs665 {
+    interface edu.bu.met.cs665.AttackBehavior {
+        {abstract} + attack()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.Bandits {
+        + Bandits()
+        + display()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.BanditsAttack {
+        + attack()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.BanditsScavenge {
+        + scavenge()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.BanditsTrade {
+        + trade()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    abstract class edu.bu.met.cs665.Computer {
+        + Computer()
+        + attack()
+        {abstract} + display()
+        + scavenge()
+        + setAttackBehavior()
+        + setScavengeBehavior()
+        + setTradeBehavior()
+        + trade()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.FactionsResources {
+        {static} + outcastsTroops : int
+        {static} # banditsFood : int
+        {static} # banditsTroops : int
+        {static} # banditsWater : int
+        {static} # factionNameB : String
+        {static} # factionNameO : String
+        {static} # factionNameU : String
+        {static} # outcastsFood : int
+        {static} # outcastsWater : int
+        {static} # wealthyFood : int
+        {static} # wealthyTroops : int
+        {static} # wealthyWater : int
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.FederationCaretaker {
+        ~ mementos : Deque<FederationMemento>
+        + addMemento()
+        + getMemento()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.FederationMemento {
+        - factionName : String
+        - food : int
+        - troops : int
+        - water : int
+        + FederationMemento()
+        + getFactionName()
+        + getFood()
+        + getTroops()
+        + getWater()
+        + toString()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.FederationOriginator {
+        - factionName : String
+        - food : int
+        - troops : int
+        - water : int
+        + FederationOriginator()
+        + getFactionName()
+        + getFood()
+        + getTroops()
+        + getWater()
+        + printInfo()
+        + saveToMemento()
+        + setFactionName()
+        + setFood()
+        + setTroops()
+        + setWater()
+        + undoFromMemento()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.Game {
+        {static} # characterName : String
+        {static} ~ accept : int
+        {static} ~ federationCaretaker : FederationCaretaker
+        {static} ~ federationMemento : FederationMemento
+        {static} ~ federationOriginator : FederationOriginator
+        {static} ~ reader : BufferedReader
+        {static} ~ s : Sol
+        {static} + firstTurn()
+        {static} + main()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.IntroTutorial {
+        {static} + fedTutorial()
+        {static} + intro()
+        {static} + introFederation()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.Outcasts {
+        + Outcasts()
+        + display()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.OutcastsAttack {
+        + attack()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.OutcastsScavenge {
+        + scavenge()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.OutcastsTrade {
+        + trade()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    interface edu.bu.met.cs665.ScavengeBehavior {
+        {abstract} + scavenge()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.Sol {
+        {static} ~ attackedW : int
+        {static} ~ fr : FactionsResources
+        {static} ~ reader : BufferedReader
+        {static} ~ rnd : Random
+        {static} ~ turnChoiceI : int
+        {static} - factionChoiceI : int
+        {static} + attackB()
+        {static} + attackO()
+        {static} + attackW()
+        {static} + factionChoice()
+        {static} + intelF()
+        {static} + intelT()
+        {static} + intelW()
+        {static} + playerTurn()
+        {static} + reckon()
+        {static} + scavenge()
+        {static} + tradeB()
+        {static} + tradeO()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    interface edu.bu.met.cs665.TradeBehavior {
+        {abstract} + trade()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.UltraWealthy {
+        + UltraWealthy()
+        + display()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.WealthyAttack {
+        + attack()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.WealthyScavenge {
+        + scavenge()
+    }
+  }
+  
+
+  namespace edu.bu.met.cs665 {
+    class edu.bu.met.cs665.WealthyTrade {
+        + trade()
+    }
+  }
+  
+
+  edu.bu.met.cs665.Bandits -up-|> edu.bu.met.cs665.Computer
+  edu.bu.met.cs665.BanditsAttack .up.|> edu.bu.met.cs665.AttackBehavior
+  edu.bu.met.cs665.BanditsScavenge .up.|> edu.bu.met.cs665.ScavengeBehavior
+  edu.bu.met.cs665.BanditsTrade .up.|> edu.bu.met.cs665.TradeBehavior
+  edu.bu.met.cs665.Computer o-- edu.bu.met.cs665.AttackBehavior : attackBehavior
+  edu.bu.met.cs665.Computer o-- edu.bu.met.cs665.ScavengeBehavior : scavengeBehavior
+  edu.bu.met.cs665.Computer o-- edu.bu.met.cs665.TradeBehavior : tradeBehavior
+  edu.bu.met.cs665.Game -up-|> edu.bu.met.cs665.IntroTutorial
+  edu.bu.met.cs665.Outcasts -up-|> edu.bu.met.cs665.Computer
+  edu.bu.met.cs665.OutcastsAttack .up.|> edu.bu.met.cs665.AttackBehavior
+  edu.bu.met.cs665.OutcastsScavenge .up.|> edu.bu.met.cs665.ScavengeBehavior
+  edu.bu.met.cs665.OutcastsTrade .up.|> edu.bu.met.cs665.TradeBehavior
+  edu.bu.met.cs665.UltraWealthy -up-|> edu.bu.met.cs665.Computer
+  edu.bu.met.cs665.WealthyAttack .up.|> edu.bu.met.cs665.AttackBehavior
+  edu.bu.met.cs665.WealthyScavenge .up.|> edu.bu.met.cs665.ScavengeBehavior
+  edu.bu.met.cs665.WealthyTrade .up.|> edu.bu.met.cs665.TradeBehavior
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
